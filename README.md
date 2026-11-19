@@ -1,7 +1,6 @@
 # Lastwechsel am Gate: was nach dem Wechsel noch funktioniert – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-lastwechsel-gate-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-lastwechsel-gate-demo.streamlit.app/)**
 
 Stück 8 der Reihe **Änderungserkennung** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Karten der vorigen Stücke
 rechnen ihre Schwelle unter der Annahme **unabhängiger** Beobachtungen; hier läuft eine einseitige CUSUM-Karte auf einem **Lkw-Tor** (zwei Spuren, 6 Plätze insgesamt, Poisson-Ankünfte, exponentielle
