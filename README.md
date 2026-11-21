@@ -183,7 +183,7 @@ Jede Zahl der README steht in `tests/test_claims.py` (exakt oder im Band, in der
 ## Tests
 
 **255 Tests**, seriell rund 145 s (Messung am 2026-11-19, andere Läufe liefen zeitweise parallel; diese Maschine, Windows, Python 3.14, ein BLAS-Thread; `pytest tests/ -q`). Zusammensetzung: Handbeispiele als Brüche, Orakel (Resolvente gegen Integral der Matrixexponentialfunktion, Geburts-Sterbe-Formel,
-eigene 1-D-Kette, Summe der Überlebenswahrscheinlichkeiten, Monte-Carlo, Ereignissimulation des Gates, Nyström gegen Zellenkette), Eigenschaften der Kette und der Karten, Simulator gegen Kette, gefrorene Daten, Claims, Verdikte (je Zweig, je Zahl),
+eigene 1-D-Kette, Summe der Überlebenswahrscheinlichkeiten, Monte-Carlo, ereignisdiskrete Simulation des Gates, Nyström gegen Zellenkette), Eigenschaften der Kette und der Karten, Simulator gegen Kette, gefrorene Daten, Claims, Verdikte (je Zweig, je Zahl),
 Schnellstart-Verdikte, Randfälle, App (AppTest), Layout, Footer, Laufzeit-Importe, Zufallsquelle, Literaturwerte (nur die V2-Zahlen mit Quelle, Rest „offen“).
 Die Neu-Rechnen-Tests (`--check` beider Messskripte) vergleichen im Band; exakte Zahlen mit relativer Toleranz 1e-7. Der Lauf unter Linux (`demo_linux_check.py`) wurde **nicht** ausgeführt.
 

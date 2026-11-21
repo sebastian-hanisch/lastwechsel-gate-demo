@@ -196,7 +196,7 @@ def test_h6_code_der_demo_information():
 
 # ----------------------------------------------------------------------------------------------------------------- H7: unabhängiges Orakel
 def test_h7_ereignissimulation_des_gates(mini):
-    """Ereignissimulation Lkw für Lkw (stdlib random, kein Code der Demo): ARL₀ und ARL₁ im Vier-Standardfehler-Band um die Brüche 49/6 und 103/24."""
+    """Ereignisdiskrete Simulation Lkw für Lkw (stdlib random, kein Code der Demo): ARL₀ und ARL₁ im Vier-Standardfehler-Band um die Brüche 49/6 und 103/24."""
     rng = random.Random(8080)
     for exakt, lam_b in ((49 / 6, 1), (103 / 24, 2)):
         v = MG.simulate(rng, 1, lam_b, 40, 20000)

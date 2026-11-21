@@ -2,7 +2,7 @@
 
 (a) Übergangsmatrix M: Resolvente der Demo gegen das Integral ∫ λ e^{−λt} expm(Gt) dt (scipy.integrate.quad_vec).
 (b) Randverteilung der gesehenen Zahl: Kette der Demo gegen die Geburts-Sterbe-Formel (PASTA); mittlere Wartezeit gegen die Formel mit den Erlang-Anteilen.
-(c) Karte auf (n, C): gegen eine eigene 1-D-Kette bei unabhängigem n, gegen die Summe P(RL > t), gegen Monte-Carlo der Kette und gegen eine Ereignissimulation des
+(c) Karte auf (n, C): gegen eine eigene 1-D-Kette bei unabhängigem n, gegen die Summe P(RL > t), gegen Monte-Carlo der Kette und gegen eine ereignisdiskrete Simulation des
     Gates Lkw für Lkw (stdlib random, FIFO mit c Spuren; kein Code der Demo).
 (d) Bezugsgrößen für unabhängige Beobachtungen: Nyström-Verfahren gegen eine eigene Zellenkette und gegen Monte-Carlo; Zellenkette für die schiefe Randverteilung gegen Monte-Carlo.
 Handrechnung mit Brüchen: tests/test_handbeispiele.py. Literaturwerte: keine (siehe tests/test_literatur_lwg.py)."""
@@ -126,7 +126,7 @@ def test_kette_gegen_monte_carlo_der_kette():
 
 
 def event_sim_gate(rng, lam_pre, lam_post, burn, runs, H, kappa, c=2, K=6):
-    """Ereignissimulation des Gates Lkw für Lkw (FIFO, c Spuren, K Plätze, stdlib random). Der burn-te angenommene Lkw ist ν: danach gilt lam_post, die Karte startet bei 0."""
+    """Ereignisdiskrete Simulation des Gates Lkw für Lkw (FIFO, c Spuren, K Plätze, stdlib random). Der burn-te angenommene Lkw ist ν: danach gilt lam_post, die Karte startet bei 0."""
     out = []
     for _ in range(runs):
         t, lam, acc, Cs, steps = 0.0, lam_pre, 0, 0.0, 0
@@ -166,7 +166,7 @@ def test_kette_gegen_ereignissimulation_des_gates(lam_b, key):
 
 
 def test_zusammenbruch_h97_gegen_ereignissimulation():
-    """Die Kernzahl des Stücks, ein anderer Weg: Schwelle H = 97 (unabhängig 408,2) hat auf dem Gate ARL₀ 51,2 (Ereignissimulation, 4 Standardfehler)."""
+    """Die Kernzahl des Stücks, ein anderer Weg: Schwelle H = 97 (unabhängig 408,2) hat auf dem Gate ARL₀ 51,2 (Ereignisdiskrete Simulation, 4 Standardfehler)."""
     rng = random.Random(97)
     v = event_sim_gate(rng, 1.6, 1.6, 60, 4000, 97, 20)
     mean = sum(v) / len(v)

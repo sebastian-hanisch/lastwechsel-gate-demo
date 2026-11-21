@@ -1,8 +1,8 @@
 # ruff: noqa: E741, E731, F841
-"""Handrechnung des Mini-Gates (EINE Spur, DREI Plätze insgesamt) mit exakten Brüchen und eine unabhängige Ereignissimulation: Orakel und Handbeispiele.
+"""Handrechnung des Mini-Gates (EINE Spur, DREI Plätze insgesamt) mit exakten Brüchen und eine unabhängige ereignisdiskrete Simulation: Orakel und Handbeispiele.
 
 Wörtlich aus dem Handbeispiel-Skript der Vorarbeit übernommen (nur `fractions`, `math`, `random`; kein Code der Demo): Gauß-Jordan mit Brüchen, die Matrizen M und R,
-stationäre Verteilung, ARL der Karte (n, C) als Bruch, Lauflängenverteilung und die Ereignissimulation des Gates Lkw für Lkw."""
+stationäre Verteilung, ARL der Karte (n, C) als Bruch, Lauflängenverteilung und die ereignisdiskrete Simulation des Gates Lkw für Lkw."""
 from fractions import Fraction as Fr
 import math
 
@@ -105,7 +105,7 @@ def rl_distribution(R, score, H, init, tmax):
 
 
 def simulate(rng, lam_pre, lam_post, burn, runs, H=2):
-    """Gate Lkw fuer Lkw per Ereignissimulation (Exp-Ankuenfte, Exp-Abfertigung, eine Spur, 3 Plaetze insgesamt).
+    """Gate Lkw fuer Lkw per ereignisdiskreter Simulation (Exp-Ankuenfte, Exp-Abfertigung, eine Spur, 3 Plaetze insgesamt).
     Der burn-te angenommene Lkw ist nu (letzter Lkw vor der Aenderung): ab der naechsten Ankunftsluecke gilt lam_post.
     Karte startet danach bei 0; Rueckgabe: Zahl angenommener Lkw nach nu bis zum Alarm (Alarm-Lkw zaehlt mit)."""
     res = []
